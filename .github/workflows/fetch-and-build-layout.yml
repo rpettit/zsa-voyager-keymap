@@ -1,6 +1,7 @@
 name: Fetch and build layout
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       layout_id:
