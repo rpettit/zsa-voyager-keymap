@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_SCLN,        KC_TRANSPARENT, 
-    CW_TOGG,        MT(MOD_LCTL, KC_A),LT(3,KC_R),     MT(MOD_LGUI, KC_S),MT(MOD_LSFT, KC_T),MT(MOD_LALT, KC_G),                                MT(MOD_RALT, KC_M),MT(MOD_RSFT, KC_N),MT(MOD_RGUI, KC_E),LT(2,KC_I),     MT(MOD_RCTL, KC_O),KC_QUOTE,       
+    OSL(1),         MT(MOD_LCTL, KC_A),LT(3,KC_R),     MT(MOD_LGUI, KC_S),MT(MOD_LSFT, KC_T),MT(MOD_LALT, KC_G),                                MT(MOD_RALT, KC_M),MT(MOD_RSFT, KC_N),MT(MOD_RGUI, KC_E),LT(2,KC_I),     MT(MOD_RCTL, KC_O),KC_QUOTE,       
     KC_DELETE,      KC_Z,           KC_X,           KC_C,           ALL_T(KC_D),    KC_V,                                           KC_K,           ALL_T(KC_H),    KC_COMMA,       KC_DOT,         KC_SLASH,       MO(7),          
                                                     KC_TAB,         LT(5,KC_SPACE),                                 LT(4,KC_BSPC),  KC_ENTER
   ),

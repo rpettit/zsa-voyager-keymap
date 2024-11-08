@@ -3,8 +3,10 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 
+#define PERMISSIVE_HOLD
+
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "4R0X0/ebmw7"
+#define SERIAL_NUMBER "4R0X0/JYr59"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 2
 
