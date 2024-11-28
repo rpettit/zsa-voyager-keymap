@@ -22,8 +22,6 @@ enum tap_dance_codes {
   DANCE_0,
   DANCE_1,
   DANCE_2,
-  DANCE_3,
-  DANCE_4,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -44,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_HASH,        KC_CIRC,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_DLR,         KC_ASTR,        KC_PLUS,        KC_PIPE,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, TD(DANCE_0),    KC_LBRC,        TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),                                    MT(MOD_RALT, KC_EQUAL),MT(MOD_RSFT, KC_MINUS),TD(DANCE_4),    KC_PERC,        MT(MOD_RCTL, KC_SCLN),KC_GRAVE,       
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_RBRC,        KC_RCBR,        KC_RPRN,        KC_RABK,                                        KC_TRANSPARENT, KC_UNDS,        KC_TRANSPARENT, KC_TRANSPARENT, KC_BSLS,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, MT(MOD_LCTL, KC_LBRC),KC_LABK,        TD(DANCE_0),    TD(DANCE_1),    KC_LEFT_ALT,                                    MT(MOD_RALT, KC_EQUAL),MT(MOD_RSFT, KC_MINUS),TD(DANCE_2),    KC_PERC,        MT(MOD_RCTL, KC_SCLN),KC_GRAVE,       
+    KC_TRANSPARENT, KC_RBRC,        KC_RABK,        KC_RCBR,        KC_RPRN,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_UNDS,        KC_TILD,        KC_TRANSPARENT, KC_BSLS,        KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
@@ -174,8 +172,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case TD(DANCE_0):
     case TD(DANCE_1):
     case TD(DANCE_2):
-    case TD(DANCE_3):
-    case TD(DANCE_4):
         action = &tap_dance_actions[TD_INDEX(keycode)];
         if (!record->event.pressed && action->state.count && !action->state.finished) {
             tap_dance_tap_hold_t *tap_hold = (tap_dance_tap_hold_t *)action->user_data;
@@ -223,9 +219,7 @@ void tap_dance_tap_hold_reset(tap_dance_state_t *state, void *user_data) {
 
 
 tap_dance_action_t tap_dance_actions[] = {
-        [DANCE_0] = ACTION_TAP_DANCE_TAP_HOLD(KC_TILD, KC_LEFT_CTRL),
-        [DANCE_1] = ACTION_TAP_DANCE_TAP_HOLD(KC_LCBR, KC_LEFT_GUI),
-        [DANCE_2] = ACTION_TAP_DANCE_TAP_HOLD(KC_LPRN, KC_LEFT_SHIFT),
-        [DANCE_3] = ACTION_TAP_DANCE_TAP_HOLD(KC_LABK, KC_LEFT_ALT),
-        [DANCE_4] = ACTION_TAP_DANCE_TAP_HOLD(KC_AMPR, KC_RIGHT_GUI),
+        [DANCE_0] = ACTION_TAP_DANCE_TAP_HOLD(KC_LCBR, KC_LEFT_GUI),
+        [DANCE_1] = ACTION_TAP_DANCE_TAP_HOLD(KC_LPRN, KC_LEFT_SHIFT),
+        [DANCE_2] = ACTION_TAP_DANCE_TAP_HOLD(KC_AMPR, KC_RIGHT_GUI),
 };
