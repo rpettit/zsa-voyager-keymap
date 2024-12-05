@@ -233,3 +233,10 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_1] = ACTION_TAP_DANCE_TAP_HOLD(KC_LPRN, KC_LEFT_SHIFT),
         [DANCE_2] = ACTION_TAP_DANCE_TAP_HOLD(KC_AMPR, KC_RIGHT_GUI),
 };
+
+const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+
+// This globally defines all key overrides to be used
+const key_override_t *key_overrides[] = {
+	&delete_key_override
+};
